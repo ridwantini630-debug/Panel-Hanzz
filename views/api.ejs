@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>API Hanzz</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🔑 API Hanzz</h1>
+
+    <p>Status API: Aktif</p>
+
+    <p>API Key:</p>
+
+<% keys.forEach((item) => { %>
+    <p><strong>API Key:</strong> <%= item.key %></p>
+<a href="/delete-api?key=<%= item.key %>"
+   onclick="return confirm('Yakin ingin menghapus API Key ini?')">
+    <button>Hapus</button>
+</a>
+    <p><strong>Role:</strong> <%= item.role %></p>
+<% if (item.role === "member") { %>
+<a href="/upgrade-role?key=<%= item.key %>">
+    <button>Upgrade ke Premium</button>
+</a>
+<% } %>
+<% if (item.role === "admin") { %>
+    <p><strong>Limit:</strong> Unlimited ♾️</p>
+<% } %>
+<% if (item.role === "member" || item.role === "premium") { %>
+    <p><strong>Limit:</strong> <%= item.limit %></p>
+<a href="/add-limit?key=<%= item.key %>&amount=100">
+    <button>+100 Limit</button>
+</a>
+<br><br>
+<form action="/set-limit" method="GET">
+<input type="hidden" name="key" value="<%= item.key %>">
+<% } %>
+<% }) %>
+    <form action="/create-api" method="GET">
+        <select name="role">
+            <option value="member">Member</option>
+            <option value="premium">Premium</option>
+            </select>
+            <button type="submit">Buat API Key</button>
+            </form>
+    <a href="/">
+        <button>Kembali Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+</html>
+

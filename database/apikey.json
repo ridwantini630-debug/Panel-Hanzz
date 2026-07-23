@@ -1,0 +1,34 @@
+[
+  {
+    "user": "admin",
+    "key": "9608e87adee45a0b4a6e673b1db913d8",
+    "role": "admin"
+  },
+  {
+    "user": "admin",
+    "key": "b5d155bd46d70ebd374b2cc4ced97439",
+    "role": "admin"
+  },
+  {
+    "user": "admin",
+    "key": "c3cbf7603b22172ee7dc4491d4ed6edc",
+    "role": "admin"
+  },
+  {
+    "user": "admin",
+    "key": "d9480ed88a4247e4fd7c224a2ceccfda",
+    "role": "admin"
+  },
+  {
+    "user": "admin",
+    "key": "442e3a2283398250c00d5b9e38cbf7ba",
+    "role": "premium",
+    "limit": 10000
+  },
+  {
+    "user": "admin",
+    "key": "ab1efa0f4fec2427a36bf731dd517353",
+    "role": "premium",
+    "limit": 10000
+  }
+]

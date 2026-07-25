@@ -3,10 +3,11 @@ const router = express.Router();
 const isLogin = require("../middleware/auth");
 const generateKey = require("../lib/apikey");
 const fs = require("fs");
+const path = require("path");
 const brat = require("./brat");
 const bratvid = require("./bratvid");
 const apikey = require("../middleware/apikey");
-const file = "./database/apikey.json";
+const file = path.join(process.cwd(), "database", "apikey.json");
 router.get("/api", isLogin, (req, res) => {
 const keys = JSON.parse(fs.readFileSync(file));
 

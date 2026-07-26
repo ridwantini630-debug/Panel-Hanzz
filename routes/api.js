@@ -7,7 +7,7 @@ const path = require("path");
 const brat = require("./brat");
 const bratvid = require("./bratvid");
 const apikey = require("../middleware/apikey");
-const file = path.join(process.cwd(), "database", "apikey.json");
+const file = path.join(__dirname, "../database/apikey.json");
 router.get("/api", isLogin, (req, res) => {
 const keys = JSON.parse(fs.readFileSync(file));
 

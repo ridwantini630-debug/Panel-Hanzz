@@ -3,7 +3,7 @@ const isLogin = require("./middleware/auth");
 const session = require("express-session");
 const authRoutes = require("./routes/auth");
 const apiRoutes = require("./routes/api");
-//const iqcRoutes = require("./routes/iqc"); // tambahkan ini
+const iqcRoutes = require("./routes/iqc"); // tambahkan ini
 const path = require("path");
 
 const app = express();
@@ -40,7 +40,7 @@ app.use("/", apiRoutes);
 app.use("/brat", require("./routes/brat"));
 app.use("/bratvid", require("./routes/bratvid"));
 
-//app.use("/", iqcRoutes);
+app.use("/", iqcRoutes);
 
 if (require.main === module) {
     app.listen(PORT, () => {

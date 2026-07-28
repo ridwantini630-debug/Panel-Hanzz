@@ -84,20 +84,9 @@ router.get("/iqc", async (req, res) => {
       y += 36;
     }
 
-    // Jam
-    const time = new Date().toLocaleTimeString("id-ID", {
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-
-    ctx.fillStyle = "#667781";
-    ctx.font = "20px sans-serif";
-    ctx.fillText(time, bubbleX + bubbleW - 95, bubbleY + bubbleH - 15);
-
-    // Centang biru
-    ctx.fillStyle = "#53BDEB";
-    ctx.font = "22px sans-serif";
-    ctx.fillText("✓✓", bubbleX + bubbleW - 40, bubbleY + bubbleH - 15);
+    // Centang pesan WhatsApp
+ctx.font = "22px sans-serif";
+ctx.fillText("✓✓", bubbleX + bubbleW - 45, bubbleY + bubbleH - 15);
 
     res.setHeader("Content-Type", "image/png");
     res.end(canvas.toBuffer("image/png"));
